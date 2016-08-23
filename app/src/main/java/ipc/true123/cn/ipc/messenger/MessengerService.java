@@ -19,7 +19,7 @@ public class MessengerService extends Service {
         public void handleMessage(Message msg) {
             switch (msg.what){
                 case 1:
-                    Log.i(TAG,""+msg.getData());
+                    Log.i(TAG,""+msg.getData().getString("msg"));
                     break;
             }
             super.handleMessage(msg);
