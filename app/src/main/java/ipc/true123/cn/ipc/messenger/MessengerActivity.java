@@ -1,6 +1,8 @@
 package ipc.true123.cn.ipc.messenger;
 
 import android.content.ComponentName;
+import android.content.Context;
+import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.IBinder;
@@ -33,6 +35,7 @@ public class MessengerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.messenger_activity);
         ButterKnife.bind(this);
+        bindService(new Intent(this,MessengerService.class),connection, Context.BIND_AUTO_CREATE);
     }
 
     private ServiceConnection connection = new ServiceConnection() {
